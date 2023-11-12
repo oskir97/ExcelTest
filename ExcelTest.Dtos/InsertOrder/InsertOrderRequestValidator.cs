@@ -7,8 +7,8 @@ namespace ExcelTest.Dtos.InsertOrder
     {
         public InsertOrderRequestValidator(IValidationService<InsertOrderRequest> service) : base(service)
         {
-            AddRuleFor(r => r.Customer).AddRequirement(r => !string.IsNullOrWhiteSpace(r.Customer), "Cannot specified a Customer");
-            AddRuleFor(r => r.Country).AddRequirement(r => !string.IsNullOrWhiteSpace(r.Customer), "Cannot specified a Country");
+            AddRuleFor(r => r.Orders).AddRequirement(r => !r.Orders.Any(o=>string.IsNullOrWhiteSpace(o.Customer)), "You have to specified all Customers of orders");
+            AddRuleFor(r => r.Orders).AddRequirement(r => !r.Orders.Any(o => string.IsNullOrWhiteSpace(o.Country)), "You have to specified all Country of orders");
         }
     }
 }

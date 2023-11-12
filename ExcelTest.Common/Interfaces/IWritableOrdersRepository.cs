@@ -3,8 +3,8 @@ using ExcelTest.Dtos.InsertOrder;
 using ExcelTest.Entities.Interfaces;
 namespace ExcelTest.Common.Interfaces
 {
-    public interface IWritableOrderRepository : IUnitOfWork
+    public interface IWritableOrdersRepository : IUnitOfWork
     {
-        Task<InsertOrderResponse> InsertOrder(Order request);
+        Task<InsertOrderResponse> InsertOrder(List<Order> request);
     }
 }

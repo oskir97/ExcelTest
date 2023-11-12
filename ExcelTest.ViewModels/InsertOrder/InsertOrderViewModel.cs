@@ -10,11 +10,11 @@ namespace ExcelTest.ViewModels.InsertOrder
     public class InsertOrderViewModel
     {
 
-        public int Id { get; }
+        public bool Correct { get; }
 
         public InsertOrderViewModel(InsertOrderResponse dto)
         {
-            Id = dto.Id;
+            Correct = dto.Correct;
         }
 
     }

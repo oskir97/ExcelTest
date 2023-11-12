@@ -8,6 +8,6 @@ namespace ExcelTest.Dtos.InsertOrder
 {
     public class InsertOrderResponse
     {
-        public int Id { get; set; }
+        public bool Correct { get; set; }
     }
 }

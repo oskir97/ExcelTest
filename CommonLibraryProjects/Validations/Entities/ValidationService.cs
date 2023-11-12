@@ -32,7 +32,7 @@ namespace CommonLibraryProjects.Validations.Entities
         public List<IFailure> SetValidatorFor<ItemsType>(IEnumerable<ItemsType> items, IValidator<ItemsType> validator)
         {
             List<IFailure> result = new List<IFailure>();
-            ValidationService<ItemsType> validationService = validator.ServiceValidator as ValidationService<ItemsType>;
+            ValidationService<ItemsType>? validationService = validator.ServiceValidator as ValidationService<ItemsType>;
             if (validationService != null)
             {
                 Validator<ItemsType> validatorApi = validationService.ValidatorApi;

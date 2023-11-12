@@ -1,5 +1,5 @@
 ﻿using ExcelTest.Common.Interfaces;
-using ExcelTest.Dtos.InsertOrder;
+using ExcelTest.Dtos.InsertOrders;
 using ExcelTest.Core.Entities;
 using System.Data;
 using Dapper;
@@ -16,9 +16,9 @@ namespace ExcelTest.EFC.Repositories
             _connectionFactory = connectionFactory;
         }
 
-        public async Task<InsertOrderResponse> InsertOrder(List<Order> orders)
+        public async Task<InsertOrdersResponse> InsertOrders(List<Order> orders)
         {
-            var result = new InsertOrderResponse
+            var result = new InsertOrdersResponse
             {
                 Correct = true
             };

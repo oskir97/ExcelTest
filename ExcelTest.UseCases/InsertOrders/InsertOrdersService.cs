@@ -1,24 +1,24 @@
 ﻿using CommonLibraryProjects.Validations.Interfaces;
 using ExcelTest.Common.Interfaces;
 using ExcelTest.Core.Entities;
-using ExcelTest.Dtos.InsertOrder;
+using ExcelTest.Dtos.InsertOrders;
 
-namespace ExcelTest.UseCases.InsertOrder
+namespace ExcelTest.UseCases.InsertOrders
 {
-    public class InsertOrderService
+    public class InsertOrdersService
     {
-        private readonly IValidator<InsertOrderRequest> validator;
+        private readonly IValidator<InsertOrdersRequest> validator;
         private readonly IWritableOrdersRepository orderWritableRepository;
         private readonly IReadableOrdersRepository orderReadableRepository;
 
-        public InsertOrderService(IValidator<InsertOrderRequest> validator, IWritableOrdersRepository orderWritableRepository, IReadableOrdersRepository orderReadableRepository)
+        public InsertOrdersService(IValidator<InsertOrdersRequest> validator, IWritableOrdersRepository orderWritableRepository, IReadableOrdersRepository orderReadableRepository)
         {
             this.validator = validator;
             this.orderWritableRepository = orderWritableRepository;
             this.orderReadableRepository = orderReadableRepository;
         }
 
-        public void RunValidationDTO(InsertOrderRequest dto)
+        public void RunValidationDTO(InsertOrdersRequest dto)
         {
             if (!validator.Validate(dto))
             {
@@ -26,7 +26,7 @@ namespace ExcelTest.UseCases.InsertOrder
             }
         }
 
-        public async Task<InsertOrderResponse> RunInsertOrderResponse(InsertOrderRequest dto)
+        public async Task<InsertOrdersResponse> RunInsertOrderResponse(InsertOrdersRequest dto)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace ExcelTest.UseCases.InsertOrder
                         orders.Add(order);
                 }
 
-                return await this.orderWritableRepository.InsertOrder(orders);
+                return await this.orderWritableRepository.InsertOrders(orders);
 
             }catch
             {

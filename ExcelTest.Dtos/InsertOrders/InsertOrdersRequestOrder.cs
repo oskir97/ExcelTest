@@ -1,6 +1,6 @@
-﻿namespace ExcelTest.Dtos.InsertOrder
+﻿namespace ExcelTest.Dtos.InsertOrders
 {
-    public class InsertOrderRequestOrder
+    public class InsertOrdersRequestOrder
     {
         public int Id { get; set; }
         public required string Customer { get; set; }

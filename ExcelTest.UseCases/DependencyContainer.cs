@@ -1,5 +1,5 @@
-﻿using ExcelTest.UseCases.InsertOrder;
-using ExcelTest.UseCasesPorts.InsertOrder;
+﻿using ExcelTest.UseCases.InsertOrders;
+using ExcelTest.UseCasesPorts.InsertOrders;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ExcelTest.UseCases
@@ -8,8 +8,8 @@ namespace ExcelTest.UseCases
     {
         public static IServiceCollection AddApplicationUseCases(this IServiceCollection services)
         {
-            services.AddScoped<InsertOrderService>();
-            services.AddTransient<IInsertOrderInputPort, InsertOrderInteractor>();
+            services.AddScoped<InsertOrdersService>();
+            services.AddTransient<IInsertOrdersInputPort, InsertOrdersInteractor>();
             return services;
         }
     }

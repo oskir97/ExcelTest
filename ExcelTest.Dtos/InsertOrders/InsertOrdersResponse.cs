@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcelTest.Dtos.InsertOrder
+namespace ExcelTest.Dtos.InsertOrders
 {
-    public class InsertOrderResponse
+    public class InsertOrdersResponse
     {
         public bool Correct { get; set; }
     }

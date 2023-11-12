@@ -1,5 +1,5 @@
 ﻿using CommonLibraryProjects.Validations.Interfaces;
-using ExcelTest.Dtos.InsertOrder;
+using ExcelTest.Dtos.InsertOrders;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ExcelTest.Dtos
@@ -8,7 +8,7 @@ namespace ExcelTest.Dtos
     {
         public static IServiceCollection AddApplicationValidators(this IServiceCollection services)
         {
-            services.AddScoped<IValidator<InsertOrderRequest>, InsertOrderRequestValidator>();
+            services.AddScoped<IValidator<InsertOrdersRequest>, InsertOrdersRequestValidator>();
             return services;
         }
     }

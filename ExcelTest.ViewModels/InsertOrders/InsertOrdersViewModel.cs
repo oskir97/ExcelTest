@@ -1,18 +1,18 @@
-﻿using ExcelTest.Dtos.InsertOrder;
+﻿using ExcelTest.Dtos.InsertOrders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcelTest.ViewModels.InsertOrder
+namespace ExcelTest.ViewModels.InsertOrders
 {
-    public class InsertOrderViewModel
+    public class InsertOrdersViewModel
     {
 
         public bool Correct { get; }
 
-        public InsertOrderViewModel(InsertOrderResponse dto)
+        public InsertOrdersViewModel(InsertOrdersResponse dto)
         {
             Correct = dto.Correct;
         }

@@ -1,5 +1,5 @@
-﻿using ExcelTest.Presenters.InsertOrder;
-using ExcelTest.UseCasesPorts.InsertOrder;
+﻿using ExcelTest.Presenters.InsertOrders;
+using ExcelTest.UseCasesPorts.InsertOrders;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ExcelTest.Presenters
@@ -8,7 +8,7 @@ namespace ExcelTest.Presenters
     {
         public static IServiceCollection AddApplicationPresenters(this IServiceCollection services)
         {
-            services.AddScoped<IInsertOrderOutputPort, InsertOrderPresenter>();
+            services.AddScoped<IInsertOrdersOutputPort, InsertOrdersPresenter>();
             return services;
         }
     }

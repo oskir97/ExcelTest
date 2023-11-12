@@ -4,7 +4,7 @@
     {
         public static WebApplication UseEndpoints(this WebApplication app)
         {
-            app.MapPost("/insertOrder", new InsertOrderEndpoint().InsertOrder);
+            app.MapPost("/insertOrders", new InsertOrdersEndpoint().InsertOrders);
             return app;
         }
     }

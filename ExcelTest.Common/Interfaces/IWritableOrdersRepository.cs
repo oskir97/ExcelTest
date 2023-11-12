@@ -1,10 +1,10 @@
 ﻿using ExcelTest.Core.Entities;
-using ExcelTest.Dtos.InsertOrder;
+using ExcelTest.Dtos.InsertOrders;
 using ExcelTest.Entities.Interfaces;
 namespace ExcelTest.Common.Interfaces
 {
     public interface IWritableOrdersRepository : IUnitOfWork
     {
-        Task<InsertOrderResponse> InsertOrder(List<Order> request);
+        Task<InsertOrdersResponse> InsertOrders(List<Order> request);
     }
 }

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExcelTest.Controllers\ExcelTest.Controllers.csproj" />
+    <ProjectReference Include="..\ExcelTest.EFC.IoC\ExcelTest.EFC.IoC.csproj" />
+    <ProjectReference Include="..\ExcelTest.Presenters\ExcelTest.Presenters.csproj" />
+    <ProjectReference Include="..\ExcelTest.UseCases\ExcelTest.UseCases.csproj" />
+  </ItemGroup>
+
+</Project>

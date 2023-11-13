@@ -6,27 +6,27 @@ namespace ExcelTest.EFC.Repositories.DbConnection
 {
     public class DbConnectionFactory : IDbConnectionFactory
     {
-        private readonly IConfiguration _configuration;
-        private readonly string _readConnectionStringName;
-        private readonly string _writeConnectionStringName;
+        private readonly IConfiguration configuration;
+        private readonly string readConnectionStringName;
+        private readonly string writeConnectionStringName;
 
         public DbConnectionFactory(IConfiguration configuration, string readConnectionStringName, string writeConnectionStringName)
         {
-            _configuration = configuration;
-            _readConnectionStringName = readConnectionStringName;
-            _writeConnectionStringName = writeConnectionStringName;
+            this.configuration = configuration;
+            this.readConnectionStringName = readConnectionStringName;
+            this.writeConnectionStringName = writeConnectionStringName;
         }
 
         public IDbConnection CreateConnectionForRead()
         {
-            IDbConnection connection = new MySqlConnection(_configuration.GetConnectionString(_readConnectionStringName));
+            IDbConnection connection = new MySqlConnection(this.configuration.GetConnectionString(this.readConnectionStringName));
             connection.Open();
             return connection;
         }
 
         public IDbConnection CreateConnectionForWrite()
         {
-            IDbConnection connection = new MySqlConnection(_configuration.GetConnectionString(_writeConnectionStringName));
+            IDbConnection connection = new MySqlConnection(this.configuration.GetConnectionString(this.writeConnectionStringName));
             connection.Open();
             return connection;
         }

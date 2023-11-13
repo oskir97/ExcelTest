@@ -1,6 +1,12 @@
-﻿namespace ExcelTest.Dtos.InsertOrders
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ExcelTest.ViewModels.Common
 {
-    public class InsertOrdersRequestOrder
+    public class OrderViewModel
     {
         public int Id { get; set; }
         public required string Customer { get; set; }

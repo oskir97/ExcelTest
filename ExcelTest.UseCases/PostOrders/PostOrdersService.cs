@@ -42,7 +42,7 @@ namespace ExcelTest.UseCases.PostOrders
                         Country = orderDto.Country
                     };
 
-                    var existOrder = await this.orderReadableRepository.ExistOrder(order);
+                    var existOrder = await this.orderReadableRepository.ExistOrder(order.Id);
 
                     if(!existOrder)
                         orders.Add(order);

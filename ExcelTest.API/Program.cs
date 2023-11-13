@@ -34,6 +34,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
+app.MapGraphQL("/graphql");
 app.UseCors();
 app.UseEndpoints();
 await app.RunAsync();

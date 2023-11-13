@@ -2,6 +2,7 @@
 using ExcelTest.EFC.DataContexts;
 using ExcelTest.EFC.Repositories;
 using ExcelTest.EFC.Repositories.DbConnection;
+using ExcelTest.EFC.Repositories.Queries;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,6 +37,13 @@ namespace ExcelTest.EFC.IoC
 
             // Registro de repositorio de lectura
             services.AddScoped<IReadableOrdersRepository, OrdersReadableRepository>();
+
+            //GraphQL
+            services.AddScoped<OrdersQuery>();
+
+            services.AddGraphQL();
+
+            services.AddGraphQLServer().AddQueryType<OrdersQuery>();
 
             return services;
         }

@@ -44,8 +44,22 @@ namespace ExcelTest.EFC.Repositories
                 {
                     int offset = (dto.Page - 1) * dto.PageSize;
 
-                    const string sql = "SELECT * FROM Orders ORDER BY Id LIMIT @PageSize OFFSET @Offset";
-                    var orders = await connection.QueryAsync<Order>(sql, new { PageSize = dto.PageSize, Offset = offset });
+                    string sql;
+                    object parameters;
+
+                    if (!string.IsNullOrEmpty(dto.customerid) && !string.IsNullOrEmpty(dto.country))
+                    {
+                        string all = dto.all.HasValue && dto.all.Value ? "AND" : "OR";
+                        sql = $"SELECT * FROM Orders WHERE Customer LIKE CONCAT('%', @Customer, '%') {all} Country LIKE CONCAT('%', @Country, '%') ORDER BY Id LIMIT @PageSize OFFSET @Offset";
+                        parameters = new { Customer = dto.customerid, Country = dto.country, PageSize = dto.PageSize, Offset = offset };
+                    }
+                    else
+                    {
+                        sql = $"SELECT * FROM Orders WHERE (@CustomerId IS NULL OR Customer LIKE CONCAT('%', @CustomerId, '%')) AND (@Country IS NULL OR Country LIKE CONCAT('%', @Country, '%')) ORDER BY Id LIMIT @PageSize OFFSET @Offset";
+                        parameters = new { CustomerId = dto.customerid, Country = dto.country, PageSize = dto.PageSize, Offset = offset };
+                    }
+
+                    var orders = await connection.QueryAsync<Order>(sql, parameters);
 
                     var response = new GetOrdersResponse
                     {

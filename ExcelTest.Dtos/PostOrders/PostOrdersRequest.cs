@@ -1,8 +1,8 @@
 ﻿using ExcelTest.Dtos.Common;
 
-namespace ExcelTest.Dtos.InsertOrders
+namespace ExcelTest.Dtos.PostOrders
 {
-    public class InsertOrdersRequest
+    public class PostOrdersRequest
     {
         public required List<OrderDto> Orders { get; set; }
     }

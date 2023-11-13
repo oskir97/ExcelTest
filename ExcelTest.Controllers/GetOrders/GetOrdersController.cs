@@ -3,7 +3,7 @@ using ExcelTest.Dtos.GetOrders;
 using ExcelTest.UseCasesPorts.GetOrders;
 using ExcelTest.ViewModels.Common;
 using ExcelTest.ViewModels.GetOrders;
-using ExcelTest.ViewModels.InsertOrders;
+using ExcelTest.ViewModels.PostOrders;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,11 +1,6 @@
 ﻿using ExcelTest.Controllers.GetOrders;
-using ExcelTest.Controllers.InsertOrders;
+using ExcelTest.Controllers.PostOrders;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExcelTest.Controllers
 {
@@ -13,7 +8,7 @@ namespace ExcelTest.Controllers
     {
         public static IServiceCollection AddApplicationControllers(this IServiceCollection services)
         {
-            services.AddScoped<IInsertOrdersController, InsertOrdersController>();
+            services.AddScoped<IPostOrdersController, PostOrdersController>();
             services.AddScoped<IGetOrdersController, GetOrdersController>();
             return services;
         }

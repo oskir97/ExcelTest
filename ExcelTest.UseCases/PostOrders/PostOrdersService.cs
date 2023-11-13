@@ -1,24 +1,24 @@
 ﻿using CommonLibraryProjects.Validations.Interfaces;
 using ExcelTest.Common.Interfaces;
 using ExcelTest.Core.Entities;
-using ExcelTest.Dtos.InsertOrders;
+using ExcelTest.Dtos.PostOrders;
 
-namespace ExcelTest.UseCases.InsertOrders
+namespace ExcelTest.UseCases.PostOrders
 {
-    public class InsertOrdersService
+    public class PostOrdersService
     {
-        private readonly IValidator<InsertOrdersRequest> validator;
+        private readonly IValidator<PostOrdersRequest> validator;
         private readonly IWritableOrdersRepository orderWritableRepository;
         private readonly IReadableOrdersRepository orderReadableRepository;
 
-        public InsertOrdersService(IValidator<InsertOrdersRequest> validator, IWritableOrdersRepository orderWritableRepository, IReadableOrdersRepository orderReadableRepository)
+        public PostOrdersService(IValidator<PostOrdersRequest> validator, IWritableOrdersRepository orderWritableRepository, IReadableOrdersRepository orderReadableRepository)
         {
             this.validator = validator;
             this.orderWritableRepository = orderWritableRepository;
             this.orderReadableRepository = orderReadableRepository;
         }
 
-        public void RunValidationDTO(InsertOrdersRequest dto)
+        public void RunValidationDTO(PostOrdersRequest dto)
         {
             if (!validator.Validate(dto))
             {
@@ -26,7 +26,7 @@ namespace ExcelTest.UseCases.InsertOrders
             }
         }
 
-        public async Task<InsertOrdersResponse> RunInsertOrderResponse(InsertOrdersRequest dto)
+        public async Task<PostOrdersResponse> RunPostOrdersResponse(PostOrdersRequest dto)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace ExcelTest.UseCases.InsertOrders
                         orders.Add(order);
                 }
 
-                return await this.orderWritableRepository.InsertOrders(orders);
+                return await this.orderWritableRepository.PostOrders(orders);
 
             }catch
             {

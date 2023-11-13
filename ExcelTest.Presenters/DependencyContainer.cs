@@ -1,7 +1,7 @@
 ﻿using ExcelTest.Presenters.GetOrders;
-using ExcelTest.Presenters.InsertOrders;
+using ExcelTest.Presenters.PostOrders;
 using ExcelTest.UseCasesPorts.GetOrders;
-using ExcelTest.UseCasesPorts.InsertOrders;
+using ExcelTest.UseCasesPorts.PostOrders;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ExcelTest.Presenters
@@ -10,7 +10,7 @@ namespace ExcelTest.Presenters
     {
         public static IServiceCollection AddApplicationPresenters(this IServiceCollection services)
         {
-            services.AddScoped<IInsertOrdersOutputPort, InsertOrdersPresenter>();
+            services.AddScoped<IPostOrdersOutputPort, PostOrdersPresenter>();
             services.AddScoped<IGetOrdersOutputPort, GetOrdersPresenter>();
             return services;
         }

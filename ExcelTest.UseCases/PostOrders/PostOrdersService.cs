@@ -46,6 +46,8 @@ namespace ExcelTest.UseCases.PostOrders
 
                     if(!existOrder)
                         orders.Add(order);
+                    else
+                        await this.orderWritableRepository.PutOrder(order); //si existe, se edita con las nuevas propiedades
                 }
 
                 return await this.orderWritableRepository.PostOrders(orders);

@@ -3,7 +3,7 @@ using ExcelTest.Dtos.PostOrders;
 using ExcelTest.Core.Entities;
 using System.Data;
 using Dapper;
-using ExcelTest.EFC.Repositories.DbConnection;
+using ExcelTest.EFC.DataContexts.DbConnection;
 using ExcelTest.Dtos.PutOrder;
 using ExcelTest.Dtos.RemoveOrder;
 using ExcelTest.Dtos.GetOrders;

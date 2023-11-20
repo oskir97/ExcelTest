@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcelTest.EFC.Repositories.DbConnection
+namespace ExcelTest.EFC.DataContexts.DbConnection
 {
     public interface IDbConnectionFactory
     {

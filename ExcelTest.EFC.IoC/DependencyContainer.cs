@@ -1,7 +1,7 @@
 ﻿using ExcelTest.Common.Interfaces;
 using ExcelTest.EFC.DataContexts;
 using ExcelTest.EFC.Repositories;
-using ExcelTest.EFC.Repositories.DbConnection;
+using ExcelTest.EFC.DataContexts.DbConnection;
 using ExcelTest.EFC.Repositories.Queries;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

@@ -2,7 +2,7 @@
 using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace ExcelTest.EFC.Repositories.DbConnection
+namespace ExcelTest.EFC.DataContexts.DbConnection
 {
     public class DbConnectionFactory : IDbConnectionFactory
     {

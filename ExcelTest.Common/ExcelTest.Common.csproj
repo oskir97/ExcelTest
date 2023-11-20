@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Specifications\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ExcelTest.Core\ExcelTest.Core.csproj" />
     <ProjectReference Include="..\ExcelTest.Dtos\ExcelTest.Dtos.csproj" />
     <ProjectReference Include="..\ExcelTest.Entities\ExcelTest.Entities.csproj" />
